@@ -1,4 +1,4 @@
-package dev.nextchapter.nextchapter_api;
+package dev.nextchapter.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

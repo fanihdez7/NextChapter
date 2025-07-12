@@ -1,4 +1,4 @@
-package dev.nextchapter.nextchapter_api;
+package dev.nextchapter.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
