@@ -22,3 +22,13 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# ignore what is inside /dockers/secrets/ or other directories named secrets
+**/secrets/**
+
+# ignore what is inside /dockers/volume and any subdirectories
+**/dockers/volume/**
+# ignore what is inside openlibrary-importer and any subdirectories
+**/openlibrary-importer/**
+
+

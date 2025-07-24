@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432" 
+    environment:
+      POSTGRES_USER: postgres 
+      POSTGRES_DB: nextchapter
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./volume/data_to_load:/tmp/data/processed
+      - ./volume/db_scripts:/tmp/db_scripts
+      - ./volume/openlibrary-db.sql:/tmp/openlibrary-db.sql
+    secrets:
+      - db_password
+
+secrets:
+   db_password:
+     file: ./secrets/db_password.txt
+
+volumes:
+  pgdata:
+
+#network needed to be able to connect to the db
+networks: 
+  default:
+    driver: bridge
